@@ -21,9 +21,11 @@ class TestGithhubOrgClient(unittest.TestCase):
     @patch("client.get_json")
     def test_org(self, param, mock_json):
         """test definition"""
+
         cli = client(param)
         mock_json.return_value = {"payload": True}
         self.assertEqual(cli.org, {"payload": True})
+        mock_json.assert_called_once()
 
 
 if __name__ == '__main__':
