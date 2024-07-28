@@ -9,7 +9,7 @@ from unittest.mock import patch
 client = __import__('client').GithubOrgClient
 
 
-class TestGithhubOrgClient(unittest.TestCase):
+class TestGithubOrgClient(unittest.TestCase):
     """
         Class test suite of client
     """
