@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-    Client modules test suite
+    Client modules test suite, test every method in the client
+    class
 """
 
 import unittest
@@ -11,7 +12,8 @@ client = __import__('client').GithubOrgClient
 
 class TestGithubOrgClient(unittest.TestCase):
     """
-        Class test suite of client
+        Class test suite of client of GithubOrgClient
+        methods
     """
 
     @parameterized.expand([
@@ -20,7 +22,7 @@ class TestGithubOrgClient(unittest.TestCase):
         ])
     @patch("client.get_json")
     def test_org(self, param: str, mock_json):
-        """test definition"""
+        """Test that org() returns the correct value"""
         cli = client(param)
         cli.org()
         test_url = f'https://api.github.com/orgs/{input}'
