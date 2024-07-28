@@ -24,3 +24,7 @@ class TestGithhubOrgClient(unittest.TestCase):
         cli = client(param)
         mock_json.return_value = {"payload": True}
         self.assertEqual(cli.org, {"payload": True})
+
+
+if __name__ == '__main__':
+    unittest.main()
