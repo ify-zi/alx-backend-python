@@ -19,9 +19,8 @@ class TestGithubOrgClient(unittest.TestCase):
         ("abc")
         ])
     @patch("client.get_json")
-    def test_org(self, param, mock_json):
+    def test_org(self, param: str, mock_json):
         """test definition"""
-
         cli = client(param)
         cli.org()
         test_url = f'https://api.github.com/orgs/{input}'
