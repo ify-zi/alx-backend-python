@@ -23,9 +23,9 @@ class TestGithhubOrgClient(unittest.TestCase):
         """test definition"""
 
         cli = client(param)
-        mock_json.return_value = {"payload": True}
-        self.assertEqual(cli.org, {"payload": True})
-        mock_json.assert_called_once()
+        cli.org()
+        test_url = f'https://api.github.com/orgs/{input}'
+        mock_json.assert_called_once_with('test_url')
 
 
 if __name__ == '__main__':
